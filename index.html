@@ -1,0 +1,762 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proyecto de Investigación - Infraestructura Eléctrica Vereda Llanitos</title>
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.92);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(229, 231, 235, 0.8);
+        }
+        .hero-bg {
+            background: radial-gradient(circle at top right, rgba(245, 158, 11, 0.15), transparent 45%),
+                        radial-gradient(circle at bottom left, rgba(34, 197, 94, 0.12), transparent 45%);
+        }
+        .img-overlay {
+            background: linear-gradient(180deg, rgba(15, 23, 42, 0.15) 0%, rgba(15, 23, 42, 0.9) 100%);
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 font-sans antialiased selection:bg-amber-200 selection:text-amber-900">
+
+    <!-- Encabezado y Navegación -->
+    <header class="sticky top-0 z-50 glass-panel border-b border-slate-200/80 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <div class="flex items-center space-x-3">
+                <div class="w-10 h-10 rounded-xl bg-amber-500 text-white flex items-center justify-center shadow-md shadow-amber-500/20">
+                    <i class="fa-solid fa-bolt text-xl"></i>
+                </div>
+                <div>
+                    <span class="text-xs font-bold tracking-wider uppercase text-amber-600 block">Proyecto de Investigación - Grado 11°</span>
+                    <h1 class="text-lg font-bold text-slate-900 leading-tight">Vereda Llanitos <span class="text-slate-400 font-normal">| Subachoque</span></h1>
+                </div>
+            </div>
+
+            <!-- Navegación Escritorio -->
+            <nav class="hidden md:flex items-center space-x-6 text-sm font-medium text-slate-600">
+                <a href="#contexto" class="hover:text-amber-600 transition-colors">Contexto</a>
+                <a href="#galeria" class="hover:text-amber-600 transition-colors">Infraestructura</a>
+                <a href="#sondeo" class="hover:text-amber-600 transition-colors">Resultados Sondeo</a>
+                <a href="#afectaciones" class="hover:text-amber-600 transition-colors">Impacto Comunidad</a>
+                <a href="#conclusiones" class="hover:text-amber-600 transition-colors">Conclusiones</a>
+                <a href="#participa" class="hover:text-amber-600 transition-colors bg-amber-50 text-amber-700 px-3.5 py-2 rounded-lg border border-amber-200 hover:bg-amber-100">
+                    <i class="fa-solid fa-clipboard-check mr-1.5"></i> Formulario
+                </a>
+            </nav>
+
+            <!-- Botón Menú Móvil -->
+            <button id="mobile-menu-btn" class="md:hidden p-2 rounded-lg text-slate-600 hover:text-slate-900 hover:bg-slate-100 focus:outline-none" aria-label="Abrir Menú">
+                <i class="fa-solid fa-bars text-xl"></i>
+            </button>
+        </div>
+
+        <!-- Menú Desplegable Móvil -->
+        <div id="mobile-menu" class="hidden md:hidden border-t border-slate-200 bg-white px-4 pt-2 pb-4 space-y-2">
+            <a href="#contexto" class="mobile-link block py-2 text-slate-700 font-medium hover:text-amber-600">Contexto</a>
+            <a href="#galeria" class="mobile-link block py-2 text-slate-700 font-medium hover:text-amber-600">Infraestructura</a>
+            <a href="#sondeo" class="mobile-link block py-2 text-slate-700 font-medium hover:text-amber-600">Resultados Sondeo</a>
+            <a href="#afectaciones" class="mobile-link block py-2 text-slate-700 font-medium hover:text-amber-600">Impacto Comunidad</a>
+            <a href="#conclusiones" class="mobile-link block py-2 text-slate-700 font-medium hover:text-amber-600">Conclusiones</a>
+            <a href="#participa" class="mobile-link block py-2 text-amber-700 font-medium bg-amber-50 px-3 rounded-lg border border-amber-200">
+                <i class="fa-solid fa-clipboard-check mr-1.5"></i> Formulario Comunitario
+            </a>
+        </div>
+    </header>
+
+    <main>
+        <!-- Sección Principal (Hero) -->
+        <section class="relative py-16 lg:py-24 hero-bg overflow-hidden border-b border-slate-200">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                    
+                    <div class="lg:col-span-6 space-y-6 text-center lg:text-left">
+                        <div class="inline-flex items-center space-x-2 bg-amber-100 text-amber-800 px-3.5 py-1.5 rounded-full text-xs font-semibold tracking-wide border border-amber-200">
+                            <i class="fa-solid fa-location-dot"></i>
+                            <span>Subachoque, Cundinamarca &bull; Vereda Llanitos</span>
+                        </div>
+                        
+                        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 tracking-tight leading-tight">
+                            Impacto de las Deficiencias de la <span class="text-amber-600">Infraestructura Eléctrica</span> en el Bienestar Comunitario
+                        </h1>
+                        
+                        <p class="text-base sm:text-lg text-slate-600 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
+                            Proyecto de investigación del área de Tecnología e Informática que busca visibilizar las consecuencias cotidianas de las fallas del servicio eléctrico en la vereda Llanitos y analizar las principales afectaciones en la calidad de vida de sus habitantes.
+                        </p>
+
+                        <div class="pt-2 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
+                            <a href="#sondeo" class="w-full sm:w-auto px-6 py-3.5 bg-slate-900 hover:bg-slate-800 text-white font-semibold rounded-xl shadow-lg shadow-slate-900/10 transition-all flex items-center justify-center space-x-2">
+                                <span>Ver Datos del Sondeo</span>
+                                <i class="fa-solid fa-chart-pie"></i>
+                            </a>
+                            <a href="#galeria" class="w-full sm:w-auto px-6 py-3.5 bg-amber-500 hover:bg-amber-600 text-white font-semibold rounded-xl shadow-lg shadow-amber-500/20 transition-all flex items-center justify-center space-x-2">
+                                <span>Galería Visual</span>
+                                <i class="fa-solid fa-camera"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Imagen Destacada -->
+                    <div class="lg:col-span-6 space-y-4">
+                        <div class="relative rounded-3xl overflow-hidden shadow-2xl border border-slate-200 group">
+                            <img src="https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?auto=format&fit=crop&w=1200&q=80" 
+                                 alt="Red de Distribución Eléctrica" 
+                                 class="w-full h-80 sm:h-96 object-cover transform group-hover:scale-105 transition-transform duration-700">
+                            <div class="absolute inset-0 img-overlay flex flex-col justify-between p-6 sm:p-8">
+                                <div class="flex justify-between items-start">
+                                    <span class="bg-amber-500/90 text-white text-xs font-bold px-3 py-1.5 rounded-full backdrop-blur-md">
+                                        <i class="fa-solid fa-bolt mr-1"></i> Red de Distribución Eléctrica
+                                    </span>
+                                    <span class="bg-slate-900/80 text-amber-400 text-xs font-semibold px-3 py-1 rounded-full backdrop-blur-md">
+                                        Subachoque
+                                    </span>
+                                </div>
+                                <div>
+                                    <p class="text-xs font-bold uppercase tracking-widest text-amber-400 mb-1">Diagnóstico Comunitario</p>
+                                    <h3 class="text-xl sm:text-2xl font-bold text-white">Infraestructura Expuesta a Fallas Recurrentes</h3>
+                                    <p class="text-xs sm:text-sm text-slate-200 mt-2 line-clamp-2">Líneas de transmisión rural propensas a sobrecargas, cortes imprevistos y variaciones continuas de voltaje.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Indicadores Rápidos -->
+                        <div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
+                            <div class="bg-white p-3 rounded-xl border border-slate-200 text-center shadow-sm">
+                                <span class="text-lg font-extrabold text-red-600 block">Alta</span>
+                                <span class="text-[10px] font-bold uppercase text-slate-400">Recurrencia</span>
+                            </div>
+                            <div class="bg-white p-3 rounded-xl border border-slate-200 text-center shadow-sm">
+                                <span class="text-lg font-extrabold text-amber-600 block">Regular</span>
+                                <span class="text-[10px] font-bold uppercase text-slate-400">Calidad</span>
+                            </div>
+                            <div class="bg-white p-3 rounded-xl border border-slate-200 text-center shadow-sm">
+                                <span class="text-lg font-extrabold text-blue-600 block">Diario</span>
+                                <span class="text-[10px] font-bold uppercase text-slate-400">Impacto</span>
+                            </div>
+                            <div class="bg-white p-3 rounded-xl border border-slate-200 text-center shadow-sm">
+                                <span class="text-lg font-extrabold text-emerald-600 block">Grado 11°</span>
+                                <span class="text-[10px] font-bold uppercase text-slate-400">Proyecto Tec.</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Planteamiento del Problema -->
+        <section id="contexto" class="py-16 bg-white border-b border-slate-200">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <div class="max-w-3xl mx-auto text-center mb-12">
+                    <span class="text-xs font-bold text-amber-600 uppercase tracking-widest block mb-2">Planteamiento del Problema</span>
+                    <h2 class="text-3xl font-bold text-slate-900 sm:text-4xl">La Situación Energética en Llanitos</h2>
+                    <p class="mt-4 text-slate-600 text-base sm:text-lg">
+                        La vereda Llanitos, en Subachoque (Cundinamarca), presenta serios retos de infraestructura eléctrica que impactan de manera continua las actividades sociales, académicas y económicas.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    
+                    <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200 hover:border-amber-300 transition-all">
+                        <div class="w-10 h-10 rounded-lg bg-amber-500/10 text-amber-600 flex items-center justify-center font-bold mb-4 text-lg">01</div>
+                        <h3 class="text-xl font-bold text-slate-900 mb-2">Deficiencias Reducen el Bienestar</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed">
+                            Las fluctuaciones de voltaje e interrupciones del suministro interrumpen la rutina diaria de las familias rurales, limitando el acceso continuo a tecnologías, alumbrado y refrigeración.
+                        </p>
+                    </div>
+
+                    <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200 hover:border-amber-300 transition-all">
+                        <div class="w-10 h-10 rounded-lg bg-amber-500/10 text-amber-600 flex items-center justify-center font-bold mb-4 text-lg">02</div>
+                        <h3 class="text-xl font-bold text-slate-900 mb-2">Falta de Visibilidad Institucional</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed">
+                            La escasez de datos formalizados sobre las fallas impide que los habitantes gestionen adecuadamente ante las entidades prestadoras del servicio mejoras tangibles para la vereda.
+                        </p>
+                    </div>
+
+                    <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200 hover:border-amber-300 transition-all">
+                        <div class="w-10 h-10 rounded-lg bg-amber-500/10 text-amber-600 flex items-center justify-center font-bold mb-4 text-lg">03</div>
+                        <h3 class="text-xl font-bold text-slate-900 mb-2">Aporte de la Tecnología</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed">
+                            A través de este proyecto escolar de Tecnología e Informática, se sistematiza el diagnóstico comunitario en una herramienta interactiva para respaldar la voz comunitaria.
+                        </p>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Galería de Infraestructura -->
+        <section id="galeria" class="py-16 bg-slate-900 text-white border-b border-slate-800">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="max-w-3xl mx-auto text-center mb-12">
+                    <span class="text-xs font-bold text-amber-400 uppercase tracking-widest block mb-2">Evidencia y Contexto Visual</span>
+                    <h2 class="text-3xl font-bold text-white sm:text-4xl">Componentes de la Red Eléctrica Rural</h2>
+                    <p class="mt-4 text-slate-400 text-base">
+                        Imágenes representativas de la infraestructura eléctrica en zonas rurales y los elementos técnicos que sufren interrupciones recurrentes.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    
+                    <div class="bg-slate-800 rounded-2xl overflow-hidden border border-slate-700 shadow-xl group hover:border-amber-500 transition-all">
+                        <div class="relative h-52 overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1544725176-7c40e5a71c5e?auto=format&fit=crop&w=800&q=80" 
+                                 alt="Postes y Cableado Rural" 
+                                 class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                            <div class="absolute top-3 left-3 bg-amber-500/90 text-slate-950 font-bold text-xs px-2.5 py-1 rounded-md">
+                                Tendido Eléctrico
+                            </div>
+                        </div>
+                        <div class="p-5">
+                            <h3 class="text-lg font-bold text-white mb-1">Postes y Cableado Aéreo</h3>
+                            <p class="text-xs text-slate-400 leading-relaxed">
+                                Redes de distribución vulnerables a ráfagas de viento y ramas de árboles en vías rurales de Subachoque.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="bg-slate-800 rounded-2xl overflow-hidden border border-slate-700 shadow-xl group hover:border-amber-500 transition-all">
+                        <div class="relative h-52 overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1513828583688-c52646db42da?auto=format&fit=crop&w=800&q=80" 
+                                 alt="Transformadores Eléctricos" 
+                                 class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                            <div class="absolute top-3 left-3 bg-amber-500/90 text-slate-950 font-bold text-xs px-2.5 py-1 rounded-md">
+                                Transformadores
+                            </div>
+                        </div>
+                        <div class="p-5">
+                            <h3 class="text-lg font-bold text-white mb-1">Equipos de Regulación de Voltaje</h3>
+                            <p class="text-xs text-slate-400 leading-relaxed">
+                                Variaciones bruscas de energía que provocan sobrecargas y descompensaciones en los predios de la vereda.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="bg-slate-800 rounded-2xl overflow-hidden border border-slate-700 shadow-xl group hover:border-amber-500 transition-all">
+                        <div class="relative h-52 overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1509198397868-475647b2a1e5?auto=format&fit=crop&w=800&q=80" 
+                                 alt="Interrupción del Servicio Eléctrico" 
+                                 class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                            <div class="absolute top-3 left-3 bg-amber-500/90 text-slate-950 font-bold text-xs px-2.5 py-1 rounded-md">
+                                Apagones Recurrentes
+                            </div>
+                        </div>
+                        <div class="p-5">
+                            <h3 class="text-lg font-bold text-white mb-1">Cortes Intempestivos</h3>
+                            <p class="text-xs text-slate-400 leading-relaxed">
+                                Suspensiones del suministro que interrumpen la iluminación nocturna y las rutinas escolares y productivas.
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Resultados del Sondeo en Texto/Barras Estáticas -->
+        <section id="sondeo" class="py-16 bg-slate-50 border-b border-slate-200">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
+                    <div>
+                        <span class="text-xs font-bold text-amber-600 uppercase tracking-widest block mb-2">Investigación de Campo</span>
+                        <h2 class="text-3xl font-bold text-slate-900 sm:text-4xl">Resultados del Sondeo Comunitario</h2>
+                    </div>
+                    <p class="mt-4 md:mt-0 text-slate-600 max-w-md text-sm">
+                        Datos recolectados mediante encuestas aplicadas a los residentes de la Vereda Llanitos sobre percepción, frecuencia de corte y tipos de afectación.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
+                    
+                    <!-- Tarjeta 1: Percepción de Calidad -->
+                    <div class="bg-white p-6 sm:p-8 rounded-2xl border border-slate-200 shadow-sm">
+                        <div class="flex items-center justify-between mb-6">
+                            <div>
+                                <h3 class="text-lg font-bold text-slate-900">Percepción de Calidad del Servicio</h3>
+                                <p class="text-xs text-slate-500">¿Cómo evalúan los habitantes el servicio eléctrico?</p>
+                            </div>
+                            <span class="bg-amber-100 text-amber-800 text-xs px-2.5 py-1 rounded-full font-semibold">Valoración</span>
+                        </div>
+
+                        <div class="space-y-5">
+                            <div>
+                                <div class="flex justify-between text-sm font-bold text-slate-800 mb-1">
+                                    <span><i class="fa-solid fa-circle text-red-500 text-xs mr-2"></i>Deficiente</span>
+                                    <span>58%</span>
+                                </div>
+                                <div class="w-full bg-slate-100 rounded-full h-3">
+                                    <div class="bg-red-500 h-3 rounded-full" style="width: 58%"></div>
+                                </div>
+                            </div>
+
+                            <div>
+                                <div class="flex justify-between text-sm font-bold text-slate-800 mb-1">
+                                    <span><i class="fa-solid fa-circle text-amber-500 text-xs mr-2"></i>Regular</span>
+                                    <span>32%</span>
+                                </div>
+                                <div class="w-full bg-slate-100 rounded-full h-3">
+                                    <div class="bg-amber-500 h-3 rounded-full" style="width: 32%"></div>
+                                </div>
+                            </div>
+
+                            <div>
+                                <div class="flex justify-between text-sm font-bold text-slate-800 mb-1">
+                                    <span><i class="fa-solid fa-circle text-emerald-500 text-xs mr-2"></i>Bueno</span>
+                                    <span>10%</span>
+                                </div>
+                                <div class="w-full bg-slate-100 rounded-full h-3">
+                                    <div class="bg-emerald-500 h-3 rounded-full" style="width: 10%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Tarjeta 2: Frecuencia de Interrupciones -->
+                    <div class="bg-white p-6 sm:p-8 rounded-2xl border border-slate-200 shadow-sm">
+                        <div class="flex items-center justify-between mb-6">
+                            <div>
+                                <h3 class="text-lg font-bold text-slate-900">Frecuencia de las Interrupciones</h3>
+                                <p class="text-xs text-slate-500">Frecuencia reportada de cortes en la red</p>
+                            </div>
+                            <span class="bg-red-100 text-red-800 text-xs px-2.5 py-1 rounded-full font-semibold">Recurrencia</span>
+                        </div>
+
+                        <div class="space-y-5">
+                            <div>
+                                <div class="flex justify-between text-sm font-bold text-slate-800 mb-1">
+                                    <span>Varias veces por semana</span>
+                                    <span class="text-amber-600">48%</span>
+                                </div>
+                                <div class="w-full bg-slate-100 rounded-full h-3">
+                                    <div class="bg-amber-500 h-3 rounded-full" style="width: 48%"></div>
+                                </div>
+                            </div>
+
+                            <div>
+                                <div class="flex justify-between text-sm font-bold text-slate-800 mb-1">
+                                    <span>Diario</span>
+                                    <span class="text-red-600">27%</span>
+                                </div>
+                                <div class="w-full bg-slate-100 rounded-full h-3">
+                                    <div class="bg-red-500 h-3 rounded-full" style="width: 27%"></div>
+                                </div>
+                            </div>
+
+                            <div>
+                                <div class="flex justify-between text-sm font-bold text-slate-800 mb-1">
+                                    <span>Semanal</span>
+                                    <span class="text-blue-600">18%</span>
+                                </div>
+                                <div class="w-full bg-slate-100 rounded-full h-3">
+                                    <div class="bg-blue-500 h-3 rounded-full" style="width: 18%"></div>
+                                </div>
+                            </div>
+
+                            <div>
+                                <div class="flex justify-between text-sm font-bold text-slate-800 mb-1">
+                                    <span>Ocasional / Rara vez</span>
+                                    <span class="text-slate-600">7%</span>
+                                </div>
+                                <div class="w-full bg-slate-100 rounded-full h-3">
+                                    <div class="bg-slate-400 h-3 rounded-full" style="width: 7%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Tipos de Fallas Frecuentes -->
+                <div class="bg-white p-6 sm:p-8 rounded-2xl border border-slate-200 shadow-sm">
+                    <h3 class="text-lg font-bold text-slate-900 mb-6">Tipos de Fallas Eléctricas más Reportadas</h3>
+                    
+                    <div class="space-y-4">
+                        <div>
+                            <div class="flex justify-between text-sm font-semibold text-slate-700 mb-1">
+                                <span>Cortes intempestivos sin previo aviso</span>
+                                <span class="font-bold text-amber-600">88%</span>
+                            </div>
+                            <div class="w-full bg-slate-100 rounded-full h-3">
+                                <div class="bg-amber-500 h-3 rounded-full" style="width: 88%"></div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <div class="flex justify-between text-sm font-semibold text-slate-700 mb-1">
+                                <span>Bajones y fluctuaciones de voltaje (Sobretensión)</span>
+                                <span class="font-bold text-red-600">76%</span>
+                            </div>
+                            <div class="w-full bg-slate-100 rounded-full h-3">
+                                <div class="bg-red-500 h-3 rounded-full" style="width: 76%"></div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <div class="flex justify-between text-sm font-semibold text-slate-700 mb-1">
+                                <span>Suspensiones prolongadas en época de lluvias o vientos</span>
+                                <span class="font-bold text-blue-600">65%</span>
+                            </div>
+                            <div class="w-full bg-slate-100 rounded-full h-3">
+                                <div class="bg-blue-500 h-3 rounded-full" style="width: 65%"></div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <div class="flex justify-between text-sm font-semibold text-slate-700 mb-1">
+                                <span>Demoras prolongadas en la atención de cuadrillas de mantenimiento</span>
+                                <span class="font-bold text-slate-700">52%</span>
+                            </div>
+                            <div class="w-full bg-slate-100 rounded-full h-3">
+                                <div class="bg-slate-600 h-3 rounded-full" style="width: 52%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Ámbitos de Afectación -->
+        <section id="afectaciones" class="py-16 bg-white border-b border-slate-200">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <div class="max-w-3xl mx-auto text-center mb-12">
+                    <span class="text-xs font-bold text-amber-600 uppercase tracking-widest block mb-2">Análisis Cualitativo</span>
+                    <h2 class="text-3xl font-bold text-slate-900 sm:text-4xl">Principales Ámbitos de Afectación</h2>
+                    <p class="mt-4 text-slate-600 text-base">
+                        Las deficiencias identificadas no representan únicamente molestias temporales, sino que inciden directamente en múltiples dimensiones de la vida comunitaria.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    
+                    <div class="rounded-2xl bg-amber-50/50 border border-amber-200 overflow-hidden hover:shadow-lg transition-all flex flex-col justify-between group">
+                        <div class="relative h-36 overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=600&q=80" 
+                                 alt="Electrodomésticos y Cableado" 
+                                 class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                            <div class="absolute inset-0 bg-gradient-to-t from-amber-950/70 to-transparent"></div>
+                            <div class="absolute bottom-2 left-3 text-white font-bold text-xs flex items-center gap-1.5">
+                                <i class="fa-solid fa-plug-circle-xmark text-amber-400"></i> Daños Materiales
+                            </div>
+                        </div>
+                        <div class="p-5 flex-1 flex flex-col justify-between">
+                            <div>
+                                <h3 class="text-lg font-bold text-slate-900 mb-2">Electrodomésticos y Equipos</h3>
+                                <p class="text-slate-600 text-xs leading-relaxed">
+                                    Los constantes picos de energía provocan averías y quemaduras en neveras, televisores y motores de bombeo de agua en los predios rurales.
+                                </p>
+                            </div>
+                            <div class="mt-4 pt-3 border-t border-amber-200/80 text-[11px] font-medium text-amber-800">
+                                Riesgo económico constante para el bolsillo familiar.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="rounded-2xl bg-blue-50/50 border border-blue-200 overflow-hidden hover:shadow-lg transition-all flex flex-col justify-between group">
+                        <div class="relative h-36 overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=600&q=80" 
+                                 alt="Estudio y Computadores" 
+                                 class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                            <div class="absolute inset-0 bg-gradient-to-t from-blue-950/70 to-transparent"></div>
+                            <div class="absolute bottom-2 left-3 text-white font-bold text-xs flex items-center gap-1.5">
+                                <i class="fa-solid fa-graduation-cap text-blue-400"></i> Educación Digital
+                            </div>
+                        </div>
+                        <div class="p-5 flex-1 flex flex-col justify-between">
+                            <div>
+                                <h3 class="text-lg font-bold text-slate-900 mb-2">Estudio y Teletrabajo</h3>
+                                <p class="text-slate-600 text-xs leading-relaxed">
+                                    Pérdida de conectividad a internet e interrupción de jornadas académicas escolares y universitarias en el hogar durante los cortes.
+                                </p>
+                            </div>
+                            <div class="mt-4 pt-3 border-t border-blue-200/80 text-[11px] font-medium text-blue-800">
+                                Brecha en la productividad y continuidad escolar.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="rounded-2xl bg-emerald-50/50 border border-emerald-200 overflow-hidden hover:shadow-lg transition-all flex flex-col justify-between group">
+                        <div class="relative h-36 overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1584473457406-6240486418e9?auto=format&fit=crop&w=600&q=80" 
+                                 alt="Refrigeración de Alimentos" 
+                                 class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                            <div class="absolute inset-0 bg-gradient-to-t from-emerald-950/70 to-transparent"></div>
+                            <div class="absolute bottom-2 left-3 text-white font-bold text-xs flex items-center gap-1.5">
+                                <i class="fa-solid fa-utensils text-emerald-400"></i> Cadena de Frío
+                            </div>
+                        </div>
+                        <div class="p-5 flex-1 flex flex-col justify-between">
+                            <div>
+                                <h3 class="text-lg font-bold text-slate-900 mb-2">Alimentos y Comercio</h3>
+                                <p class="text-slate-600 text-xs leading-relaxed">
+                                    Daño de alimentos perecederos por falta de cadena de frío constante, afectando pequeñas tiendas de la vereda e insumos del hogar.
+                                </p>
+                            </div>
+                            <div class="mt-4 pt-3 border-t border-emerald-200/80 text-[11px] font-medium text-emerald-800">
+                                Pérdidas de víveres e insumos básicos.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="rounded-2xl bg-purple-50/50 border border-purple-200 overflow-hidden hover:shadow-lg transition-all flex flex-col justify-between group">
+                        <div class="relative h-36 overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1517999186809-30a008f5d023?auto=format&fit=crop&w=600&q=80" 
+                                 alt="Seguridad y Alumbrado Nocturno" 
+                                 class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                            <div class="absolute inset-0 bg-gradient-to-t from-purple-950/70 to-transparent"></div>
+                            <div class="absolute bottom-2 left-3 text-white font-bold text-xs flex items-center gap-1.5">
+                                <i class="fa-solid fa-shield-halved text-purple-400"></i> Tranquilidad Veredal
+                            </div>
+                        </div>
+                        <div class="p-5 flex-1 flex flex-col justify-between">
+                            <div>
+                                <h3 class="text-lg font-bold text-slate-900 mb-2">Seguridad y Bienestar</h3>
+                                <p class="text-slate-600 text-xs leading-relaxed">
+                                    Oscuridad nocturna que genera zozobra en las vías veredales y dificulta tareas de mantenimiento o cuidado de animales de finca.
+                                </p>
+                            </div>
+                            <div class="mt-4 pt-3 border-t border-purple-200/80 text-[11px] font-medium text-purple-800">
+                                Sensación de inseguridad y desprotección.
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Formulario Interactivo -->
+        <section id="participa" class="py-16 bg-slate-900 text-white relative overflow-hidden">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                    
+                    <div class="lg:col-span-5 space-y-4">
+                        <span class="text-xs font-bold text-amber-400 uppercase tracking-widest block">Módulo Interactivo</span>
+                        <h2 class="text-3xl font-bold sm:text-4xl text-white">¿Eres habitante de la Vereda Llanitos?</h2>
+                        <p class="text-slate-300 text-sm leading-relaxed">
+                            Este formulario fue parte de las herramientas de recolección de datos utilizadas en el proyecto para registrar la experiencia de los residentes frente a las fallas de la infraestructura eléctrica.
+                        </p>
+                        <div class="bg-slate-800/80 p-4 rounded-xl border border-slate-700 space-y-2 text-xs text-slate-300">
+                            <p><i class="fa-solid fa-circle-info text-amber-400 mr-2"></i>Tus respuestas alimentan la simulación del prototipo del proyecto.</p>
+                        </div>
+                    </div>
+
+                    <div class="lg:col-span-7">
+                        <form id="surveyForm" class="bg-white text-slate-800 p-6 sm:p-8 rounded-2xl shadow-xl space-y-5">
+                            
+                            <div>
+                                <label for="sectorInput" class="block text-xs font-bold uppercase text-slate-600 mb-2">Sector o Zona dentro de la Vereda</label>
+                                <input type="text" id="sectorInput" required placeholder="Ej: Sector El Triunfo / Vía Principal" class="w-full px-4 py-2.5 rounded-xl border border-slate-300 focus:ring-2 focus:ring-amber-500 focus:outline-none text-sm">
+                            </div>
+
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                <div>
+                                    <label for="perceptionSelect" class="block text-xs font-bold uppercase text-slate-600 mb-2">Calificación del Servicio</label>
+                                    <select id="perceptionSelect" class="w-full px-4 py-2.5 rounded-xl border border-slate-300 focus:ring-2 focus:ring-amber-500 focus:outline-none text-sm">
+                                        <option value="Deficiente">Deficiente</option>
+                                        <option value="Regular">Regular</option>
+                                        <option value="Bueno">Bueno</option>
+                                    </select>
+                                </div>
+
+                                <div>
+                                    <label for="frequencySelect" class="block text-xs font-bold uppercase text-slate-600 mb-2">Frecuencia de Cortes</label>
+                                    <select id="frequencySelect" class="w-full px-4 py-2.5 rounded-xl border border-slate-300 focus:ring-2 focus:ring-amber-500 focus:outline-none text-sm">
+                                        <option value="Varias veces por semana">Varias veces por semana</option>
+                                        <option value="Diario">Diario</option>
+                                        <option value="Semanal">Semanal</option>
+                                        <option value="Rara vez">Rara vez</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div>
+                                <label for="impactInput" class="block text-xs font-bold uppercase text-slate-600 mb-2">Afectación Principal</label>
+                                <textarea id="impactInput" rows="3" required placeholder="Describe brevemente cómo te han afectado las fallas eléctricas..." class="w-full px-4 py-2.5 rounded-xl border border-slate-300 focus:ring-2 focus:ring-amber-500 focus:outline-none text-sm"></textarea>
+                            </div>
+
+                            <button type="submit" class="w-full py-3.5 bg-amber-500 hover:bg-amber-600 text-white font-bold rounded-xl shadow-lg shadow-amber-500/20 transition-all flex items-center justify-center space-x-2">
+                                <i class="fa-solid fa-paper-plane"></i>
+                                <span>Registrar Reporte / Encuesta</span>
+                            </button>
+
+                            <!-- Mensaje de éxito -->
+                            <div id="surveySuccess" class="hidden p-4 rounded-xl bg-emerald-100 text-emerald-800 text-sm font-medium items-center space-x-2">
+                                <i class="fa-solid fa-circle-check text-emerald-600 text-lg"></i>
+                                <span>¡Muchas gracias! Tu reporte simulado ha sido registrado correctamente.</span>
+                            </div>
+
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Conclusiones -->
+        <section id="conclusiones" class="py-16 bg-slate-50 border-b border-slate-200">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <div class="max-w-3xl mx-auto text-center mb-12">
+                    <span class="text-xs font-bold text-amber-600 uppercase tracking-widest block mb-2">Síntesis Final</span>
+                    <h2 class="text-3xl font-bold text-slate-900 sm:text-4xl">Conclusiones del Estudio</h2>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    
+                    <div class="bg-white p-8 rounded-2xl border border-slate-200 shadow-sm flex items-start space-x-4">
+                        <div class="w-10 h-10 rounded-xl bg-amber-100 text-amber-600 flex items-center justify-center shrink-0 text-lg font-bold">
+                            <i class="fa-solid fa-clipboard-list"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-bold text-slate-900 mb-2">Impacto Real en el Bienestar</h3>
+                            <p class="text-slate-600 text-sm leading-relaxed">
+                                Se evidenció que las deficiencias en el servicio eléctrico perjudican de forma directa y constante la calidad de vida de los pobladores de la vereda Llanitos, trascendiendo la simple falla técnica.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="bg-white p-8 rounded-2xl border border-slate-200 shadow-sm flex items-start space-x-4">
+                        <div class="w-10 h-10 rounded-xl bg-amber-100 text-amber-600 flex items-center justify-center shrink-0 text-lg font-bold">
+                            <i class="fa-solid fa-eye"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-bold text-slate-900 mb-2">Necesidad de Visibilización</h3>
+                            <p class="text-slate-600 text-sm leading-relaxed">
+                                Es indispensable contar con diagnósticos sistemáticos producidos desde la misma comunidad para fundamentar peticiones de adecuación y mantenimiento ante la empresa prestadora del servicio.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="bg-white p-8 rounded-2xl border border-slate-200 shadow-sm flex items-start space-x-4">
+                        <div class="w-10 h-10 rounded-xl bg-amber-100 text-amber-600 flex items-center justify-center shrink-0 text-lg font-bold">
+                            <i class="fa-solid fa-laptop-code"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-bold text-slate-900 mb-2">Aporte del Área de Tecnología</h3>
+                            <p class="text-slate-600 text-sm leading-relaxed">
+                                El uso de herramientas digitales facilita la recolección, ordenamiento y difusión de datos para que los estudiantes de grado 11° puedan generar proyectos con impacto social real.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="bg-white p-8 rounded-2xl border border-slate-200 shadow-sm flex items-start space-x-4">
+                        <div class="w-10 h-10 rounded-xl bg-amber-100 text-amber-600 flex items-center justify-center shrink-0 text-lg font-bold">
+                            <i class="fa-solid fa-handshake"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-bold text-slate-900 mb-2">Propuesta a Futuro</h3>
+                            <p class="text-slate-600 text-sm leading-relaxed">
+                                Se sugiere entablar mesas de diálogo entre los líderes de la junta de acción comunal, las autoridades municipales de Subachoque y la operadora del servicio eléctrico.
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <!-- Pie de página -->
+    <footer class="bg-slate-950 text-slate-400 py-12 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-center space-y-6 md:space-y-0">
+                
+                <div class="flex items-center space-x-3">
+                    <div class="w-8 h-8 rounded-lg bg-amber-500 text-white flex items-center justify-center font-bold">
+                        <i class="fa-solid fa-bolt text-sm"></i>
+                    </div>
+                    <div>
+                        <span class="text-white font-bold block text-sm">Proyecto Final de Grado 11°</span>
+                        <span class="text-xs text-slate-500">Tecnología e Informática &bull; Subachoque, Cundinamarca</span>
+                    </div>
+                </div>
+
+                <div class="text-xs text-center md:text-right text-slate-500 space-y-1">
+                    <p>Investigación sobre la infraestructura eléctrica en la Vereda Llanitos.</p>
+                    <p>&copy; Presentación Académica Institucional</p>
+                </div>
+
+            </div>
+        </div>
+    </footer>
+
+    <!-- Script simplificado para el menú móvil y formulario -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            
+            // Lógica Menú Móvil
+            const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const mobileLinks = document.querySelectorAll('.mobile-link');
+
+            if (mobileMenuBtn && mobileMenu) {
+                mobileMenuBtn.addEventListener('click', () => {
+                    mobileMenu.classList.toggle('hidden');
+                });
+
+                mobileLinks.forEach(link => {
+                    link.addEventListener('click', () => {
+                        mobileMenu.classList.add('hidden');
+                    });
+                });
+            }
+
+            // Lógica de confirmación del formulario
+            const surveyForm = document.getElementById('surveyForm');
+            const surveySuccess = document.getElementById('surveySuccess');
+
+            if (surveyForm) {
+                surveyForm.addEventListener('submit', function (e) {
+                    e.preventDefault();
+                    
+                    if (surveySuccess) {
+                        surveySuccess.classList.remove('hidden');
+                        surveySuccess.classList.add('flex');
+                    }
+
+                    surveyForm.reset();
+
+                    setTimeout(() => {
+                        if (surveySuccess) {
+                            surveySuccess.classList.add('hidden');
+                            surveySuccess.classList.remove('flex');
+                        }
+                    }, 5000);
+                });
+            }
+
+        });
+    </script>
+</body>
+</html>
